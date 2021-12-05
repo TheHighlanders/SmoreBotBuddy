@@ -16,6 +16,8 @@ public class drivetrain extends SubsystemBase {
     public WPI_TalonSRX left2;
     public WPI_TalonSRX right1;
     public WPI_TalonSRX right2;
+    
+    private double ramp = 0.2;
   
     public drivetrain() {
      left1 = new WPI_TalonSRX(Constants.LEFT_WHEELS_1);
@@ -23,7 +25,6 @@ public class drivetrain extends SubsystemBase {
      right1 = new WPI_TalonSRX(Constants.RIGHT_WHEELS_1);
      right2 = new WPI_TalonSRX(Constants.RIGHT_WHEELS_2);
 
-    double ramp = 0.2;
   
       left1.configOpenloopRamp(ramp, 0);
       left2.configOpenloopRamp(ramp, 0);
