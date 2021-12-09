@@ -20,4 +20,6 @@ public final class Constants {
     public static final int LEFT_WHEELS_2 = 23;
     public static final int RIGHT_WHEELS_1 = 17;
     public static final int RIGHT_WHEELS_2 = 69;
+    
+    public static final int XBOX = 0;
 }

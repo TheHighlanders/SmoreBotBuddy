@@ -4,7 +4,9 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.OI;
 import frc.robot.subsystems.drivetrain;
 
 public class driveCMD extends CommandBase {
@@ -26,7 +28,7 @@ public class driveCMD extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_dDrivetrain.drivepower(left_power, right_power);
+    m_dDrivetrain.drivepower(-this.m_OI.getXboxLeftY(), this.m_OI.getXboxRightY());
   }
 
   // Called once the command ends or is interrupted.
@@ -39,3 +41,4 @@ public class driveCMD extends CommandBase {
     return false;
   }
 }
+
