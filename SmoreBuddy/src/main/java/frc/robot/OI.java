@@ -20,6 +20,9 @@ public double getXboxRightX(){
 }
 public double getXboxRightY(){
     return xbox.getY(GenericHID.Hand.kRight);
+
+
+
 }
 
 

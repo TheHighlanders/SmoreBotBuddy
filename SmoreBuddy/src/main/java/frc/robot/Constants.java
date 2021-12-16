@@ -22,4 +22,13 @@ public final class Constants {
     public static final int RIGHT_WHEELS_2 = 69;
     
     public static final int XBOX = 0;
+
+    
+    public static final int UP_1 = 1;
+    public static final int UP_2 = 2;
+
+    public static final int DOWN_1 = 3;
+    public static final int DOWN_2 = 4;
+
+    public static final int AIR_TANK = 0;
 }
