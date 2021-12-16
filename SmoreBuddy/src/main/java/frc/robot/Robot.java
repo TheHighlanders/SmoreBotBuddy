@@ -7,6 +7,9 @@ package frc.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -15,6 +18,17 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
  * project.
  */
 public class Robot extends TimedRobot {
+  public OI m_OI; 
+  private final WPI_TalonSRX m_leftMotor = new WPI_TalonSRX(0);
+  private final WPI_TalonSRX m_rightMotor = new WPI_TalonSRX(1);
+  
+
+
+  private final DifferentialDrive arcade = new DifferentialDrive(m_leftMotor, m_rightMotor);
+
+  
+  
+  
   private Command m_autonomousCommand;
 
   private RobotContainer m_robotContainer;
@@ -81,7 +95,12 @@ public class Robot extends TimedRobot {
 
   /** This function is called periodically during operator control. */
   @Override
-  public void teleopPeriodic() {}
+  public void teleopPeriodic() {
+
+    arcade.arcadeDrive(m_OI.getLogiY(), m_OI.getLogiX());
+
+
+  }
 
   @Override
   public void testInit() {
