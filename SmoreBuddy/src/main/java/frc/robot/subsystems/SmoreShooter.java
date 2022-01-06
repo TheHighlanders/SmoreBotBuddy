@@ -12,25 +12,23 @@ import frc.robot.Constants;
 
 public class SmoreShooter extends SubsystemBase {
   /** Creates a new SmoreShooter. */
-  public DoubleSolenoid up;
-  public DoubleSolenoid down;
+  public DoubleSolenoid ds;
   public Compressor airtank;
 
 
   public SmoreShooter() {
-    up = new DoubleSolenoid(Constants.UP_1,Constants.UP_2);
-    down = new DoubleSolenoid(Constants.DOWN_1, Constants.DOWN_2);
+    ds = new DoubleSolenoid(Constants.UP_1,Constants.UP_2);
     airtank = new Compressor(Constants.AIR_TANK);
 
 
 
   }
   public void extendup(){
-    up.set(DoubleSolenoid.Value.kForward);
+    ds.set(DoubleSolenoid.Value.kForward);
   }
   public void contractdown(){
-    down.set(DoubleSolenoid.Value.kReverse);
-
+    ds.set(DoubleSolenoid.Value.kReverse);
+    
   }
 
   @Override

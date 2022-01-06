@@ -5,11 +5,16 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.subsystems.SmoreShooter;
 
 public class SmoreShooterDown extends CommandBase {
   /** Creates a new SmoreShooterDown. */
-  public SmoreShooterDown() {
+  public final SmoreShooter m_dSmoreShooter;
+
+  public SmoreShooterDown(SmoreShooter dSmoreShooter) {
+    m_dSmoreShooter = dSmoreShooter;
     // Use addRequirements() here to declare subsystem dependencies.
+    addRequirements(m_dSmoreShooter);
   }
 
   // Called when the command is initially scheduled.
@@ -19,7 +24,7 @@ public class SmoreShooterDown extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-
+    m_dSmoreShooter.contractdown();
 
   }
 
